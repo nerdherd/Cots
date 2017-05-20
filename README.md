@@ -1,6 +1,6 @@
 # Cots
-## NerdHerd Team 687, Cots 2013 build season robot  
-##### Recreated 2017, Command based code
+**NerdHerd Team 687, Cots 2013 build season robot**  
+**Recreated 2017, Command based code**
 
 **General Discrption:** Cots is an agile robot, designed for speed and 
 high durability. Cots runs on a four wheel drive base system and has
