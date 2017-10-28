@@ -18,19 +18,18 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  */
 public class OI {
 	
-	 private final Joystick lstick, rstick, artic;
+	 private final Joystick stick, artic;
 	 private final Button shootPrepare, shoot;
 	 
 	 public OI(){
-		 lstick = new Joystick(0);
-		 rstick = new Joystick(1);
+		 stick = new Joystick(0);
 		 artic = new Joystick(2);
 		 
 		 shootPrepare = new JoystickButton(artic, 10);
 		 shootPrepare.whenPressed(new ShootPrepare());
 		 shootPrepare.whenReleased(new ShootEnd());
 		 
-		 shoot = new JoystickButton(artic,1);
+		 shoot = new JoystickButton(artic,2);
 		 shoot.whenPressed(new Shoot());
 		 
 	 }
@@ -39,14 +38,14 @@ public class OI {
 	  * @return Y value of the left joystick
 	  */
 	 public double getLeftY(){
-		 return lstick.getY();
+		 return stick.getRawAxis(1);
 	 }
 
 	 /**
 	  * @return Y value of the right joystick
 	  */
 	 public double getRightY(){
-		 return rstick.getY();
+		 return stick.getRawAxis(3);
 	 }
 	 
 	 /**
