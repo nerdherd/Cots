@@ -2,6 +2,7 @@ package org.usfirst.frc.team687.robot.commands;
 
 import org.usfirst.frc.team687.robot.Robot;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -21,6 +22,7 @@ public class Shoot extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	Robot.arm.eject();
+    	Timer.delay(.1);
     	Robot.arm.retract();
     }
 
