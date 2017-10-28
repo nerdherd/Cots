@@ -4,6 +4,7 @@ import org.usfirst.frc.team687.robot.Robot;
 import org.usfirst.frc.team687.robot.RobotMap;
 import org.usfirst.frc.team687.robot.commands.Articulation;
 
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -21,8 +22,11 @@ public class Arm extends Subsystem {
 	private final DoubleSolenoid ejector;
 	private final Victor intake1, intake2;
 	private final Victor articVictor;
+	private final Compressor c;
 	
-	public Arm(){
+	public Arm() {
+		c = new Compressor();
+		c.start();
 		ejector = new DoubleSolenoid(RobotMap.p_ejector1,RobotMap.p_ejector2);
 		intake1 = new Victor(RobotMap.p_intake1);
 		intake2 = new Victor(RobotMap.p_intake2);
@@ -54,8 +58,8 @@ public class Arm extends Subsystem {
 	 * Sets the fly wheels to full power
 	 */
 	public void flyWheelActivate(){
-		intake1.set(1);
-		intake2.set(1);
+		intake1.set(0.8);
+		intake2.set(0.8);
 	}
 	
 	/**
