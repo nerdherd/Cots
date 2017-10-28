@@ -33,9 +33,13 @@ public class Drive extends Subsystem {
 	 */
 	public void tankDrive(){
 		lf.set(-Robot.oi.getLeftY());
-		lb.set(-Robot.oi.getLeftY());
-		rf.set(Robot.oi.getRightY());
+		lb.set(Robot.oi.getLeftY());
+		rf.set(-Robot.oi.getRightY());
 		rb.set(Robot.oi.getRightY());
+	}
+	
+	public void setPower() {
+		
 	}
 	
 	/**
@@ -45,4 +49,3 @@ public class Drive extends Subsystem {
         setDefaultCommand(new Tank());
     }
 }
-
